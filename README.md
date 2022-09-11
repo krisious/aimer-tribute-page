@@ -1,2 +1,2 @@
 # aimer-tribute-page
-Aimer tribute page with embed youtube and spotify
+Aimer tribute page made by using bootstrap with embed youtube and spotify
