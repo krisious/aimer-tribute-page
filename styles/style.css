@@ -10,7 +10,7 @@
 }
 
 /* body{
-    height: 200vh;
+    height: 300vh;
 } */
 
 :root {
@@ -74,7 +74,7 @@ header {
 }
 
 .nav-link {
-  color: var(--cream);
+  color: white;
   font-size: 1em;
   transition: all ease-in-out 0.3s;
 }
@@ -136,6 +136,60 @@ header {
 .bio-text {
   color: var(--cream);
   gap: 1rem;
+}
+
+/* MV STYLES */
+#musicvideo{
+  width: 100%;
+  background-color: var(--navy);
+  margin-top: -1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mv-text{
+  margin-bottom: 1.5rem;
+}
+
+.mv-text h2{
+  color: var(--cream);
+  text-decoration: underline;
+}
+
+.mv-item{
+  width: 50rem;
+  margin: auto;
+}
+
+.mv-item{
+  border-radius: 1.5rem;
+}
+
+.mv-item iframe{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1.5rem;
+}
+
+/* SONGS STYLE */
+#songs{
+  width: 100%;
+  background-color: var(--navy);
+  margin-top: -1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mv-text{
+  margin-bottom: 1.5rem;
+}
+
+.mv-text h2{
+  color: var(--cream);
+  text-decoration: underline;
 }
 
 /* FOOTER STYLE */
