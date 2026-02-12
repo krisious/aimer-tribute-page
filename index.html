@@ -3,36 +3,49 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A modern tribute page for Aimer featuring biography, music videos, and songs."
+    />
     <title>Aimer Tribute Page</title>
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
     <header id="header" class="fixed-top">
-      <nav id="navbar" class="navbar container navbar-expand-lg">
-        <div class="container-fluid">
+      <nav id="navbar" class="navbar navbar-expand-lg" aria-label="Primary navigation">
+        <div class="container">
+          <a class="navbar-brand brand fw-bold" href="#home">Aimer</a>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link regular" href="#home">Home</a>
-              <a class="nav-link regular" href="#biography">Biography</a>
-              <a class="nav-link regular" href="#musicvideo">Music Video</a>
-              <a class="nav-link ragular" href="#songs">Songs</a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#biography">Biography</a>
+              <a class="nav-link" href="#musicvideo">Music Video</a>
+              <a class="nav-link" href="#songs">Songs</a>
             </div>
           </div>
         </div>
@@ -40,83 +53,138 @@
     </header>
 
     <main>
-      <article id="home" style="background-image: url('assets/aimerbackground.svg');">
-        <div class="home-content container">
-          <div class="home-title">
-            <h1 class="bold">AIMER</h1>
-            <h3 class="regular">~Tribute Page~</h3>
+      <section id="home" class="hero-section" style="background-image: url('assets/aimerbackground.svg')">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <p class="eyebrow mb-2">Japanese Vocal Artist</p>
+          <h1 class="hero-title">Aimer</h1>
+          <p class="hero-subtitle">A modern tribute page celebrating her unique, emotional voice.</p>
+          <div class="hero-cta d-flex gap-3 flex-wrap justify-content-center">
+            <a class="btn btn-primary btn-lg" href="#musicvideo">Watch Music Videos</a>
+            <a class="btn btn-outline-light btn-lg" href="#songs">Listen on Spotify</a>
           </div>
         </div>
-      </article>
-      <article id="biography">
-        <div class="bio-content container d-flex justify-content-between align-items-center">
-            <div class="bio-text d-flex flex-column">
-                <h2 class="semibold">Biography</h2>
-                <p class="regular">Aimer (エメ, pronounced eh-meh) in france means “to love” is a Japanese recording artist signed to Sony Music Entertainment Japan and attached to the talent agency FOURseam. She played piano in elementary school and picked up the guitar in junior high school. She writes music in both Japanese and English and has a good command of English from her experiences living abroad. <br><br><br> At the age of 15, Aimer lost his voice due to overuse of his vocal cords, and was forced to undergo silent therapy for treatment. However, it did not end, after recovering, he got his unique hoarse voice.</p>
+      </section>
+
+      <section id="biography" class="content-section">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <h2 class="section-title">Biography</h2>
+              <p class="lead-copy">
+                Aimer (エメ, pronounced <em>eh-meh</em>) takes her name from a French verb meaning “to love”.
+                She is a Japanese recording artist signed to Sony Music Entertainment Japan and represented
+                by FOURseam.
+              </p>
+              <p>
+                She started piano in elementary school and later picked up guitar in junior high. Aimer writes
+                songs in both Japanese and English, supported by her international experience.
+              </p>
+              <p>
+                At age 15, she temporarily lost her voice due to overuse of her vocal cords and underwent a
+                period of silent therapy. After recovery, she returned with the husky vocal character that
+                became her signature sound.
+              </p>
             </div>
-            <div class="bio-img">
-                <img src="assets/aimerphoto.svg" alt="aimer photo">
+            <div class="col-lg-5 text-center">
+              <figure class="bio-figure">
+                <img src="assets/aimerphoto.svg" class="img-fluid" alt="Portrait illustration of Aimer" />
+              </figure>
             </div>
-        </div>
-      </article>
-      <article id="musicvideo">
-        <div class="mv-content container">
-          <div class="mv-text d-flex justify-content-center">
-            <h2 class="semibold">Music Video</h2>
           </div>
-          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active ">
-                <div class="mv-item d-block ratio ratio-16x9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/mvkbCZfwWzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section id="musicvideo" class="content-section alt-bg">
+        <div class="container">
+          <h2 class="section-title text-center">Music Video Highlights</h2>
+          <div class="row g-4 mt-1">
+            <div class="col-md-6 col-xl-4">
+              <article class="media-card">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/mvkbCZfwWzA"
+                    title="Aimer - Brave Shine"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="mv-item d-block ratio ratio-16x9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/Opp9nqiN5m0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="video-title">Brave Shine</h3>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="media-card">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/Opp9nqiN5m0"
+                    title="Aimer - Kataomoi"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="mv-item d-block ratio ratio-16x9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/DP89-sZL1YM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="video-title">Kataomoi</h3>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="media-card">
+                <div class="ratio ratio-16x9">
+                  <iframe
+                    src="https://www.youtube.com/embed/DP89-sZL1YM"
+                    title="Aimer - Ref:rain"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
                 </div>
+                <h3 class="video-title">Ref:rain</h3>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="songs" class="content-section">
+        <div class="container">
+          <h2 class="section-title text-center">Listen to Aimer</h2>
+          <div class="row g-4 align-items-start mt-1">
+            <div class="col-lg-8">
+              <div class="spotify-card">
+                <iframe
+                  style="border-radius: 14px"
+                  src="https://open.spotify.com/embed/artist/0bAsR2unSRpn6BQPEnNlZm?utm_source=generator"
+                  width="100%"
+                  height="420"
+                  frameborder="0"
+                  allowfullscreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title="Spotify embed for Aimer"
+                ></iframe>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+            <div class="col-lg-4">
+              <aside class="tracks-panel">
+                <h3 class="panel-title">Popular Picks</h3>
+                <ul class="tracks-list">
+                  <li>Brave Shine</li>
+                  <li>Kataomoi</li>
+                  <li>Ref:rain</li>
+                  <li>Zankyosanka</li>
+                  <li>Last Stardust</li>
+                </ul>
+              </aside>
+            </div>
           </div>
         </div>
-      </article>
-      <article id="songs">
-        <div class="songs-content container ">
-          <div class="mv-text d-flex justify-content-center">
-            <h2 class="semibold">Songs</h2>
-          </div>
-          <div class="songs-item">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0bAsR2unSRpn6BQPEnNlZm?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
-          </div>
-        </div>
-      </article>
+      </section>
     </main>
 
     <footer>
-        <p class="regular">&#169 Dwi Krisdiyanto</p>
-      </footer>
+      <p class="mb-0">© <span id="currentYear"></span> Dwi Krisdiyanto · Modernized tribute layout</p>
+    </footer>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
     <script src="scripts/script.js"></script>

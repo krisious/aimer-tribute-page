@@ -1,8 +1,17 @@
-const navbar = document.querySelector("#header");
-window.onscroll = () => {
-  if (window.scrollY > 100) {
-    navbar.classList.add("header-active");
+const header = document.querySelector("#header");
+const yearElement = document.querySelector("#currentYear");
+
+const toggleHeaderState = () => {
+  if (window.scrollY > 40) {
+    header.classList.add("header-active");
   } else {
-    navbar.classList.remove("header-active");
+    header.classList.remove("header-active");
   }
 };
+
+window.addEventListener("scroll", toggleHeaderState, { passive: true });
+window.addEventListener("load", toggleHeaderState);
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
