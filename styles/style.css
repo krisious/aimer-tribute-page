@@ -5,6 +5,14 @@
   --gold-strong: #ffd76a;
   --surface: rgba(242, 217, 138, 0.08);
   --border: rgba(242, 217, 138, 0.28);
+  --bg: #0f1020;
+  --bg-soft: #171a33;
+  --text: #f6f7ff;
+  --text-soft: #cfd3ef;
+  --primary: #8f9bff;
+  --accent: #ffe28a;
+  --surface: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.16);
 }
 
 * {
@@ -34,6 +42,21 @@ li,
 a,
 span {
   color: var(--gold);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Playfair Display", serif;
 }
 
 main {
@@ -70,12 +93,35 @@ footer,
 
 .nav-link {
   color: var(--gold);
+/* NAV */
+#header {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+#header.header-active {
+  background-color: rgba(14, 16, 30, 0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+}
+
+.navbar {
+  min-height: 4.25rem;
+}
+
+.brand {
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  color: var(--text-soft);
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--gold-strong);
+  color: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -89,6 +135,15 @@ footer,
 
 .navbar-toggler-icon {
   filter: invert(85%) sepia(20%) saturate(420%) hue-rotate(355deg) brightness(100%) contrast(95%);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(143, 155, 255, 0.35);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
 }
 
 /* HERO */
@@ -106,6 +161,8 @@ footer,
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(13, 27, 58, 0.55), rgba(13, 27, 58, 0.95));
+  background: radial-gradient(circle at 20% 10%, rgba(143, 155, 255, 0.25), transparent 40%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(11, 12, 24, 0.9));
   z-index: -1;
 }
 
@@ -118,6 +175,7 @@ footer,
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--gold-strong);
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.82rem;
 }
@@ -130,6 +188,13 @@ footer,
 
 .hero-subtitle {
   color: var(--gold);
+  font-size: clamp(3rem, 10vw, 6.2rem);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+  color: var(--text-soft);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 1.8rem;
 }
@@ -182,6 +247,51 @@ p {
 }
 
 .media-card {
+.btn-primary {
+  background: linear-gradient(135deg, #9aa5ff, #808cf1);
+  border: 0;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+/* SHARED SECTIONS */
+.content-section {
+  padding: 5rem 0;
+}
+
+.alt-bg {
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  margin-bottom: 1.2rem;
+}
+
+.lead-copy {
+  color: var(--text);
+}
+
+p {
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.bio-figure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* MEDIA CARDS */
+.media-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
   padding: 0.75rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -189,6 +299,8 @@ p {
 .media-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
 }
 
 .media-card iframe {
@@ -202,10 +314,22 @@ p {
 }
 
 .spotify-card {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+/* SONGS */
+.spotify-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 1rem;
   padding: 0.75rem;
 }
 
 .tracks-panel {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
   padding: 1.2rem;
 }
 
@@ -224,6 +348,8 @@ p {
 
 .tracks-list li {
   border-bottom: 1px dashed var(--border);
+  color: var(--text-soft);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
   padding-bottom: 0.45rem;
 }
 
@@ -232,6 +358,8 @@ footer {
   text-align: center;
   padding: 1rem;
   color: var(--gold);
+  background: #0d0f1c;
+  color: var(--text-soft);
   border-top: 1px solid var(--border);
 }
 
@@ -242,6 +370,7 @@ footer {
     padding: 0.75rem;
     border-radius: 0.75rem;
     background: rgba(13, 27, 58, 0.98);
+    background: rgba(21, 24, 45, 0.95);
     border: 1px solid var(--border);
   }
 
