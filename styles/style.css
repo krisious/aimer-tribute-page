@@ -1,4 +1,10 @@
 :root {
+  --navy: #0d1b3a;
+  --navy-soft: #12244a;
+  --gold: #f2d98a;
+  --gold-strong: #ffd76a;
+  --surface: rgba(242, 217, 138, 0.08);
+  --border: rgba(242, 217, 138, 0.28);
   --bg: #0f1020;
   --bg-soft: #171a33;
   --text: #f6f7ff;
@@ -13,6 +19,29 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+}
+
+p,
+li,
+a,
+span {
+  color: var(--gold);
 }
 
 html,
@@ -34,6 +63,36 @@ main {
   overflow: hidden;
 }
 
+.content-section,
+.alt-bg,
+footer,
+#biography,
+#musicvideo,
+#songs {
+  background: var(--navy);
+}
+
+/* NAV */
+#header {
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+#header.header-active {
+  background-color: rgba(13, 27, 58, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  min-height: 4.25rem;
+}
+
+.brand {
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  color: var(--gold);
 /* NAV */
 #header {
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
@@ -61,11 +120,21 @@ main {
 
 .nav-link:hover,
 .nav-link.active {
+  color: var(--gold-strong);
   color: var(--accent);
   transform: translateY(-1px);
 }
 
 .navbar-toggler {
+  border-color: var(--border);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(242, 217, 138, 0.25);
+}
+
+.navbar-toggler-icon {
+  filter: invert(85%) sepia(20%) saturate(420%) hue-rotate(355deg) brightness(100%) contrast(95%);
   border-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -91,6 +160,7 @@ main {
 .hero-overlay {
   position: absolute;
   inset: 0;
+  background: linear-gradient(to bottom, rgba(13, 27, 58, 0.55), rgba(13, 27, 58, 0.95));
   background: radial-gradient(circle at 20% 10%, rgba(143, 155, 255, 0.25), transparent 40%),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(11, 12, 24, 0.9));
   z-index: -1;
@@ -104,12 +174,20 @@ main {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.16em;
+  color: var(--gold-strong);
   color: var(--accent);
   font-weight: 600;
   font-size: 0.82rem;
 }
 
 .hero-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  color: var(--gold);
   font-size: clamp(3rem, 10vw, 6.2rem);
   line-height: 1;
   margin-bottom: 0.4rem;
@@ -121,6 +199,54 @@ main {
   margin-bottom: 1.8rem;
 }
 
+.btn {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.btn-primary,
+.btn-outline-light {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.btn-primary:hover,
+.btn-outline-light:hover {
+  background: rgba(242, 217, 138, 0.14);
+  color: var(--gold-strong);
+  border-color: var(--gold-strong);
+}
+
+/* SHARED SECTIONS */
+.content-section {
+  padding: 4.5rem 0;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.lead-copy,
+p {
+  line-height: 1.75;
+}
+
+.bio-figure,
+.media-card,
+.spotify-card,
+.tracks-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.bio-figure {
+  padding: 1rem;
+}
+
+.media-card {
 .btn-primary {
   background: linear-gradient(135deg, #9aa5ff, #808cf1);
   border: 0;
@@ -171,6 +297,8 @@ p {
 }
 
 .media-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
 }
@@ -181,6 +309,11 @@ p {
 }
 
 .video-title {
+  margin: 0.8rem 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.spotify-card {
   margin: 0.75rem 0 0.25rem;
   font-size: 1.1rem;
 }
@@ -214,6 +347,7 @@ p {
 }
 
 .tracks-list li {
+  border-bottom: 1px dashed var(--border);
   color: var(--text-soft);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
   padding-bottom: 0.45rem;
@@ -223,6 +357,7 @@ p {
 footer {
   text-align: center;
   padding: 1rem;
+  color: var(--gold);
   background: #0d0f1c;
   color: var(--text-soft);
   border-top: 1px solid var(--border);
@@ -234,6 +369,7 @@ footer {
     margin-top: 0.75rem;
     padding: 0.75rem;
     border-radius: 0.75rem;
+    background: rgba(13, 27, 58, 0.98);
     background: rgba(21, 24, 45, 0.95);
     border: 1px solid var(--border);
   }
